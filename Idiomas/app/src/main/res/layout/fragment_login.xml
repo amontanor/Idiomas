@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:text="@string/user"
+        android:id="@+id/textUser"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="80dp"
+        />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editUser"
+
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textUser"
+        android:layout_toEndOf="@+id/textUser" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:text="@string/pass"
+        android:id="@+id/textPass"
+
+        android:layout_below="@id/textUser"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editPass"
+
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textPass"
+        android:layout_below="@id/editUser"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/buttonLogin"
+        android:layout_below="@+id/editPass"
+
+        android:layout_marginTop="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>
