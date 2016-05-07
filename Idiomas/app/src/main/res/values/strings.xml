@@ -7,4 +7,8 @@
     <string name="user">Usuario</string>
     <string name="pass">Password</string>
     <string name="login">Login</string>
+    <string name="cargando">Cargando...</string>
+    <string name="espere">Por favor espere...</string>
+    <string name="noLogin">Usuario/Password no encontrado</string>
+
 </resources>
