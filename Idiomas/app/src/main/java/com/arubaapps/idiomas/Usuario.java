@@ -1,5 +1,8 @@
 package com.arubaapps.idiomas;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+
 /**
  * Created by Antonio_2 on 07/05/2016.
  */
@@ -7,7 +10,8 @@ public class Usuario {
     String nombre;
     String mail;
     Integer id;
-
+    Bitmap imagenPequeña;
+    Bitmap imagenGrande;
     public Usuario ()
     {
     }
@@ -16,6 +20,22 @@ public class Usuario {
         this.id = id;
         this.mail = mail;
         this.nombre = nombre;
+    }
+
+    public Bitmap getImagenPequeña() {
+        return imagenPequeña;
+    }
+
+    public void setImagenPequeña(Bitmap imagen) {
+        this.imagenPequeña = imagen;
+    }
+
+    public Bitmap getImagenGrande() {
+        return imagenGrande;
+    }
+
+    public void setImagenGrande(Bitmap imagen) {
+        this.imagenGrande = imagen;
     }
 
     public Integer getId() {

@@ -2,7 +2,6 @@ package com.arubaapps.idiomas;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -14,14 +13,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-import static android.support.v4.app.ActivityCompat.startActivity;
 
 public class LoginThread extends AsyncTask<String, String, String> {
 
@@ -138,7 +131,7 @@ public class LoginThread extends AsyncTask<String, String, String> {
         }
         else
         {
-            Intent intent = new Intent(actividad, Inicio.class);
+            Intent intent = new Intent(actividad, InicioActivity.class);
             actividad.startActivity(intent);
         }
     }

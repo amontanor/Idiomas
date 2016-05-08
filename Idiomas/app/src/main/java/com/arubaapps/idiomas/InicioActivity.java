@@ -1,17 +1,28 @@
 package com.arubaapps.idiomas;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.ImageView;
 
-public class Inicio extends ActionBarActivity {
+public class InicioActivity extends ActionBarActivity {
+    Fragment fragment ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_inicio);
 
-
+        if (getSupportFragmentManager().findFragmentById(android.R.id.content) == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(android.R.id.content,
+                            new InicioFragment()).commit();
+        }
 
     }
 
