@@ -20,7 +20,7 @@ public class InicioActivity extends ActionBarActivity {
 
         if (getSupportFragmentManager().findFragmentById(android.R.id.content) == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(android.R.id.content,
+                    .add(R.id.contentInicio,
                             new InicioFragment()).commit();
         }
 

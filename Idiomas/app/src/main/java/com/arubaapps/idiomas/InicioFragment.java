@@ -1,11 +1,14 @@
 package com.arubaapps.idiomas;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -21,10 +24,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class InicioFragment extends Fragment{
+public class InicioFragment extends Fragment {
     private ImageView imagenPequeña;
     private ImageView imagenGrande;
     private Activity actividad;
+    private FloatingActionButton buttonNewEvento;
 
     RecyclerView recyclerView;
     Card_Eventos_Adapter adapter;
@@ -49,7 +53,21 @@ public class InicioFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View result=inflater.inflate(R.layout.fragment_inicio, container, false);
+        View result = inflater.inflate(R.layout.fragment_inicio, container, false);
+
+        buttonNewEvento = (FloatingActionButton) result.findViewById(R.id.newEvent);
+        buttonNewEvento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create new fragment and transaction
+                Fragment newFragment = new Nuevo_Evento_Fragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.contentInicio, newFragment);
+
+                transaction.commit();
+            }
+        });
 
         imagenPequeña = (ImageView) result.findViewById(R.id.imageFotoPequeña);
         imagenPequeña.setImageBitmap(Herramientas.redondearImagen(BitmapFactory.decodeResource(actividad.getResources(),
@@ -59,7 +77,7 @@ public class InicioFragment extends Fragment{
         imagenGrande.setImageDrawable(getResources().getDrawable(R.drawable.fondo));
 
         //Iniciamos las tarjetas
-        recyclerView=(RecyclerView)result.findViewById(R.id.cardList);
+        recyclerView = (RecyclerView) result.findViewById(R.id.cardList);
 
         LinearLayoutManager llm = new LinearLayoutManager(result.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);

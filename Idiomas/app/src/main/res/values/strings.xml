@@ -10,5 +10,6 @@
     <string name="cargando">Cargando...</string>
     <string name="espere">Por favor espere...</string>
     <string name="noLogin">Usuario/Password no encontrado</string>
-
+    <string name="title_activity_maps">Map</string>
+    <string name="api_key_map">AIzaSyAEerz1b7_JAMouZAiU8uWFSR9uRHn2AEc</string>
 </resources>
