@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="primaryColor" type="color">#3F51B5</item>
+    <item name="primaryDark" type="color">#303F9F</item>
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="colorAccent" type="color">#54B1C9</item>
+    <item name="colorControlNormal" type="color">#747474</item>
+
+
+</resources>

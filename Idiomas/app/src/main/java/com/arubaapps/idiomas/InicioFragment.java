@@ -2,7 +2,6 @@ package com.arubaapps.idiomas;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,13 +14,18 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Handler;
 
 
 public class InicioFragment extends Fragment {
@@ -55,17 +59,25 @@ public class InicioFragment extends Fragment {
 
         View result = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        ((InicioActivity)getActivity()).getSupportActionBar().show();
+
+        ((InicioActivity)getActivity()).getSupportActionBar().setTitle(R.string.Main);
+
         buttonNewEvento = (FloatingActionButton) result.findViewById(R.id.newEvent);
         buttonNewEvento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create new fragment and transaction
-                Fragment newFragment = new Nuevo_Evento_Fragment();
+                /* Create new fragment and transaction*/
+                Fragment newFragment = new Nuevo_Evento_Fragment_No_Floating();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
 
+                transaction.setCustomAnimations(R.anim.cien_cero,R.anim.cero_menos_cien);
                 transaction.replace(R.id.contentInicio, newFragment);
-
+                transaction.addToBackStack(null);
                 transaction.commit();
+                /*Nuevo_Evento_Fragment dialogFragment = new Nuevo_Evento_Fragment();
+                dialogFragment.show(getFragmentManager(), "Sample Fragment");*/
+
             }
         });
 
@@ -132,6 +144,34 @@ public class InicioFragment extends Fragment {
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+    }
+
+    private void callPlaceAutocompleteActivityIntent() {
+        try {
+            Intent intent =
+                    new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_FULLSCREEN)
+                            .build(getActivity());
+            startActivityForResult(intent, 12);
+//PLACE_AUTOCOMPLETE_REQUEST_CODE is integer for request code
+        } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
+            // TODO: Handle the error.
+        }
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //autocompleteFragment.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 12) {
+            if (resultCode == 13) {
+                Place place = PlaceAutocomplete.getPlace(getActivity(), data);
+            } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
+                Status status = PlaceAutocomplete.getStatus(getActivity(), data);
+            } else if (requestCode == 141) {
+
+            }
+        }
     }
 
 }

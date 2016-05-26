@@ -5,4 +5,15 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.MyDialog" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBar">true</item>
+    </style>
+
+    <style name="Theme.MyDialogWithoutBar" parent="Theme.MyDialog">
+        <item name="android:windowActionBar">false</item>
+    </style>
+
 </resources>

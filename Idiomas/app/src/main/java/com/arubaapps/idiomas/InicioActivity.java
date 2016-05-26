@@ -1,5 +1,6 @@
 package com.arubaapps.idiomas;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,6 +18,9 @@ public class InicioActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(getResources().getColor(R.color.primaryColor)));
 
         if (getSupportFragmentManager().findFragmentById(android.R.id.content) == null) {
             getSupportFragmentManager().beginTransaction()
@@ -41,7 +45,16 @@ public class InicioActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.buttonSearch) {
+           /* Create new fragment and transaction*/
+            SearchFragment newFragment = new SearchFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+            transaction.setCustomAnimations(R.anim.cien_cero,R.anim.cero_menos_cien);
+            transaction.replace(R.id.contentInicio, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+
             return true;
         }
 

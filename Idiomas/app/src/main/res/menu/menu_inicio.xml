@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".InicioActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/buttonSearch"
+        android:icon="@drawable/ic_search_white_48dp"
+        app:showAsAction="always"
+        android:title="@string/search"/>
+    <item
+        android:id="@+id/buttonEdit"
+        android:icon="@drawable/ic_mode_edit_white_48dp"
+        app:showAsAction="always"
+        android:title="@string/search"/>
 </menu>
