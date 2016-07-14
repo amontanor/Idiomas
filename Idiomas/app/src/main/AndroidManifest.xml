@@ -10,7 +10,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
         android:supportsRtl="true">
 
         <meta-data
@@ -19,7 +18,17 @@
 
         <activity
             android:name=".InicioActivity"
-            android:theme="@style/Theme.MyDialog"
+            android:theme="@style/Theme.ActivityWithToolBar"
+            android:label="@string/Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.NewEventActivity"
+            android:theme="@style/Theme.MyDialogWithoutBar"
             android:label="@string/Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,8 +40,14 @@
         </activity>
 
         <activity
-            android:name=".MapaActivity"
-            android:label="@string/title_activity_mapa">
+            android:name=".Activities.SearchActivity"
+            android:theme="@style/Theme.MyDialogWhithoutActionBar"
+            android:label="@string/Search">
+        </activity>
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:theme="@style/Theme.MyDialogWhithoutActionBar"
+            android:label="@string/Profile">
         </activity>
     </application>
 

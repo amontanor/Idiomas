@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Idiomas</string>
     <string name="action_settings">Settings</string>
+    <string name="API">api/v1/</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -10,9 +11,14 @@
     <string name="cargando">Cargando...</string>
     <string name="espere">Por favor espere...</string>
     <string name="noLogin">Usuario/Password no encontrado</string>
+    <string name="noEvent">Evento no encontrado</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_mapa">Map</string>
     <string name="search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
 
     <!-- Fragment newEvent -->
     <string name="newEventTitle">Inserte el título del evento...</string>
@@ -22,5 +28,19 @@
     <!--Cabeceras -->
     <string name="Main">My Events</string>
     <string name="Search">Search</string>
+    <string name="New_Event">New Event</string>
+    <string name="Profile">Profile</string>
+    <string name="LogOut">LogOut</string>
+    <string name="LogIn">LogIn</string>
+
+    <!--Profile-->
+    <string name="cabeceraNombre">Name</string>
+    <string name="surname">Surname</string>
+    <string name="cabeceraSexo">Gender</string>
+    <string name="hombre">man</string>
+    <string name="mujer">woman</string>
+    <string name="cabeceraFechaNacimiento">Birthdate</string>
+    <string name="cabeceraContrasena">Pass</string>
+    <string name="cabeceraNotificacionMail">Mail</string>
 
 </resources>

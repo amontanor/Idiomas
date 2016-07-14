@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/imagePhoto"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="230dp"
+            android:src="@drawable/contact"
+            android:scaleType="centerCrop"
+            android:foregroundTint="@color/colorControlNormal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:id="@+id/iconName"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:tint="@color/colorControlNormal"
+            android:layout_below="@+id/imagePhoto"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textName"
+            android:layout_alignBottom="@+id/iconName"
+            android:layout_toEndOf="@+id/iconName"
+            android:layout_alignTop="@+id/iconName"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp" />
+
+        <ImageView
+            android:id="@+id/iconTlf"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_call_black_36dp"
+            android:tint="@color/colorControlNormal"
+            android:layout_below="@+id/iconName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textTlf"
+            android:layout_alignBottom="@+id/iconTlf"
+            android:layout_toEndOf="@+id/iconTlf"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_alignTop="@+id/iconTlf" />
+
+        <ImageView
+            android:id="@+id/iconMail"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_email_black_36dp"
+            android:tint="@color/colorControlNormal"
+            android:layout_below="@+id/iconTlf"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textMail"
+            android:layout_alignBottom="@+id/iconMail"
+            android:layout_toEndOf="@+id/iconMail"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_alignTop="@+id/iconMail" />
+
+        <ImageView
+            android:id="@+id/iconCity"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_location_on_black_36dp"
+            android:tint="@color/colorControlNormal"
+            android:layout_below="@+id/iconMail"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textCity"
+            android:layout_alignBottom="@+id/iconCity"
+            android:layout_toEndOf="@+id/iconCity"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_alignTop="@+id/iconCity" />
+
+    </RelativeLayout>
+
+</ScrollView>

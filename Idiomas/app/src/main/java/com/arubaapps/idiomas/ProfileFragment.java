@@ -1,24 +1,15 @@
 package com.arubaapps.idiomas;
 
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.ActionBar;
-
-import com.arubaapps.idiomas.Activities.SearchActivity;
 
 
-public class SearchMyResultFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     private static final String KEY_POSITION="position";
     private ActionBar.Tab tabLayout;
@@ -27,11 +18,11 @@ public class SearchMyResultFragment extends Fragment {
     ActionBar.Tab tab1,tab2;
     android.app.Fragment search1, search2;
 
-    public SearchMyResultFragment() {
+    public ProfileFragment() {
     }
 
-    public static SearchMyResultFragment newInstance(String param1, String param2) {
-        SearchMyResultFragment fragment = new SearchMyResultFragment();
+    public static ProfileFragment newInstance(String param1, String param2) {
+        ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
         return fragment;
     }
@@ -57,14 +48,14 @@ public class SearchMyResultFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View result=inflater.inflate(R.layout.fragment_search_my_result, container, false);
+        View result=inflater.inflate(R.layout.fragment_profile, container, false);
 
         return(result);
 
     }
 
-    static SearchMyResultFragment newInstance(int position) {
-        SearchMyResultFragment frag=new SearchMyResultFragment();
+    static ProfileFragment newInstance(int position) {
+        ProfileFragment frag=new ProfileFragment();
         Bundle args=new Bundle();
         args.putInt(KEY_POSITION, position);
         frag.setArguments(args);

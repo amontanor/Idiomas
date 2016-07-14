@@ -2,10 +2,10 @@ package com.arubaapps.idiomas;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +18,7 @@ import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Nuevo_Evento_Fragment_No_Floating extends DialogFragment {
+public class Nuevo_Evento_Fragment_No_Floating extends Fragment {
 
     Spinner spnCountry1,spnCountry2;
     private PlaceAutocompleteFragment placeAutocompleteFragment;
@@ -37,31 +37,27 @@ public class Nuevo_Evento_Fragment_No_Floating extends DialogFragment {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.menu_nuevo_evento, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_nuevo_evento_no_floating, container, false);
-        ((InicioActivity)getActivity()).getSupportActionBar().hide();
+
         //find Spinner by id
         spnCountry1=(Spinner)view.findViewById(R.id.spnCountry1);
         spnCountry2=(Spinner)view.findViewById(R.id.spnCountry2);
-
-        //Buttons
-        imgCancelar = (ImageView)view.findViewById(R.id.imageCancel);
-        imgCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               /* Create new fragment and transaction*/
-                Fragment newFragment = new InicioFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-                transaction.setCustomAnimations(R.anim.menos_cien_cero,R.anim.cero_cien);
-                transaction.replace(R.id.contentInicio, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment) getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         calendarTextView = (TextView)view.findViewById(R.id.calendarTextView);

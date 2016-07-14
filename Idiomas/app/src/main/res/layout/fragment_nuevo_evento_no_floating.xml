@@ -18,42 +18,13 @@
             android:layout_weight="2"
             android:background="@color/primaryColor">
 
-            <ImageView
-                android:id="@+id/imageCancel"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_margin="20dp"
-                android:background="@drawable/ic_clear_white_48dp" />
-
-            <TextView
-                android:id="@+id/textSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageCancel"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:text="@string/newEventSave"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
-
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@+id/textSave"
-                android:layout_alignLeft="@+id/imageCancel"
                 android:layout_alignRight="@+id/textSave"
-                android:layout_alignStart="@+id/imageCancel"
-                android:layout_below="@+id/imageCancel"
+                android:gravity="bottom"
                 android:hint="@string/newEventTitle"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
@@ -74,13 +45,13 @@
                     android:id="@+id/imageViewRoom"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_room_white_48dp"
-                   android:backgroundTint="@color/colorControlNormal"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true" />
+                    android:background="@drawable/ic_room_white_48dp"
+                    android:backgroundTint="@color/colorControlNormal" />
 
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/place_autocomplete_fragment"
@@ -88,52 +59,87 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="72dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-            <!-- SEPARATOR -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/anchoSeparadorLayout"
-                android:layout_gravity="center"
-                android:background="@color/colorAccent"/>
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="80dp">
-
-
-                <ImageView
-                    android:id="@+id/imageViewEvent"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_event_white_24dp"
-                   android:backgroundTint="@color/colorControlNormal"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="New Text"
-                    android:id="@+id/calendarTextView"
-                    android:layout_marginLeft="72dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:onClick="mostrarCalendario"
-                    android:clickable="true" />
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="72dp" />
             </RelativeLayout>
             <!-- SEPARATOR -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/anchoSeparadorLayout"
                 android:layout_gravity="center"
-                android:background="@color/colorAccent"/>
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">7
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewEvent"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/ic_event_white_24dp"
+                        android:backgroundTint="@color/colorControlNormal" />
+
+                    <TextView
+                        android:id="@+id/calendarTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="72dp"
+                        android:clickable="true"
+                        android:onClick="mostrarCalendario"
+                        android:text="New Text" />
+                </RelativeLayout>
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewEventHour"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/ic_event_white_24dp"
+                        android:backgroundTint="@color/colorControlNormal" />
+
+                    <TextView
+                        android:id="@+id/calendarTextViewHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="72dp"
+                        android:clickable="true"
+                        android:onClick="mostrarCalendario"
+                        android:text="New Text" />
+                </RelativeLayout>
+            </LinearLayout>
+            <!-- SEPARATOR -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/anchoSeparadorLayout"
+                android:layout_gravity="center"
+                android:background="@color/colorAccent" />
+
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="80dp">
@@ -142,25 +148,25 @@
                     android:id="@+id/imageViewEventLanguage"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_language_white_24dp"
-                    android:backgroundTint="@color/colorControlNormal"
                     android:layout_marginLeft="16dp"
-                    android:layout_centerVertical="true" />
+                    android:background="@drawable/ic_language_white_24dp"
+                    android:backgroundTint="@color/colorControlNormal" />
 
                 <Spinner
                     android:id="@+id/spnCountry1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:layout_centerVertical="true" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="100dp" />
 
                 <Spinner
                     android:id="@+id/spnCountry2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="220dp"
-                    android:layout_centerVertical="true" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="220dp" />
             </RelativeLayout>
 
             <!-- SEPARATOR -->
@@ -168,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/anchoSeparadorLayout"
                 android:layout_gravity="center"
-                android:background="@color/colorAccent"/>
+                android:background="@color/colorAccent" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
@@ -185,15 +191,15 @@
                     android:backgroundTint="@color/colorControlNormal" />
 
                 <EditText
+                    android:id="@+id/textViewSubject"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
                     android:layout_marginLeft="72dp"
-                    android:hint="@string/newEventDescription"
-                    android:id="@+id/textViewSubject"
+                    android:layout_marginTop="16dp"
+                    android:clickable="false"
                     android:gravity="top"
-                    android:selectAllOnFocus="true"
-                    android:clickable="false" />
+                    android:hint="@string/newEventDescription"
+                    android:selectAllOnFocus="true" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
